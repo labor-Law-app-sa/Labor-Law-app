@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام العمل - التطبيق الأول للثقافة العمالية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a4d3a;
+            --gold: #b89344;
+            --light-gold: #f4e8c1;
+            --white: #ffffff;
+        }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        
+        /* الهيدر */
+        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; sticky: top; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-area img { width: 45px; }
+
+        /* قسم الهيرو */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #2d6a4f 100%); color: white; padding: 80px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; color: var(--light-gold); }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; }
+        .feature-img { width: 90%; max-width: 900px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin-top: 40px; }
+
+        /* الميزات */
+        .features { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px; border-radius: 20px; text-align: center; transition: 0.3s; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .card h3 { color: var(--primary); margin-bottom: 15px; }
+
+        /* أزرار التحميل */
+        .download-btns { margin-top: 40px; }
+        .btn { padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; margin: 10px; display: inline-block; transition: 0.3s; }
+        .btn-gold { background: var(--gold); color: white; }
+        .btn-gold:hover { background: #9a7b36; }
+
+        footer { background: var(--primary); color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo">
+            <h2 style="color: var(--primary); margin:0;">نظام العمل</h2>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>تطبيق نظام العمل</h1>
+        <p>المرجع الشامل لكل ما يخص الثقافة العمالية في المملكة. حاسبات ذكية، محاكاة قانونية، ونصوص النظام واللائحة بين يديك.</p>
+        <div class="download-btns">
+            <a href="#" class="btn btn-gold"><i class="fab fa-google-play"></i> قريباً على Google Play</a>
+            <a href="#" class="btn btn-gold"><i class="fab fa-apple"></i> قريباً على App Store</a>
+        </div>
+        <img src="feature.png" class="feature-img" alt="Application Interface">
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <i class="fas fa-calculator"></i>
+            <h3>حاسبات ذكية</h3>
+            <p>حساب مكافأة نهاية الخدمة ومستحقات الإجازات والعمل الإضافي بدقة متناهية.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-balance-scale"></i>
+            <h3>نظام العمل واللائحة</h3>
+            <p>تصفح كامل لنصوص مواد نظام العمل واللائحة التنفيذية مع خاصية البحث السريع.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-robot"></i>
+            <h3>المحاكاة القانونية</h3>
+            <p>استشارات قانونية فورية مدعومة بالذكاء الاصطناعي للإجابة على تساؤلاتك.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>حقوق النشر © 2026 تطبيق نظام العمل. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
