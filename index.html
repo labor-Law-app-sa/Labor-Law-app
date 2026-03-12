@@ -100,28 +100,69 @@
             </div>
         </div>
     </section>
-<h2 style="text-align: center; margin: 50px 0 20px; color: #1a4d3a; font-family: 'Cairo', sans-serif; font-size: 1.8rem; font-weight: 800;">جولة داخل التطبيق</h2>
 
-<section style="display: flex; gap: 15px; padding: 10px 5% 40px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;">
-    
-    <div style="flex: 0 0 auto; width: 260px; scroll-snap-align: start;">
-        <img src="screen1.jpg" alt="Screen 1" style="width: 100%; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid #eee;">
-    </div>
+<h2 style="text-align: center; margin: 60px 0 40px; color: #1a4d3a; font-family: 'Cairo', sans-serif; font-weight: 800;">جولة داخل التطبيق</h2>
 
-    <div style="flex: 0 0 auto; width: 260px; scroll-snap-align: start;">
-        <img src="screen2.jpg" alt="Screen 2" style="width: 100%; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid #eee;">
-    </div>
-
-    <div style="flex: 0 0 auto; width: 260px; scroll-snap-align: start;">
-        <img src="screen3.jpg" alt="Screen 3" style="width: 100%; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid #eee;">
-    </div>
-
-</section>
+<div class="mockup-container">
+    <div class="phone-frame"><img src="screen1.jpg" alt="Screen 1"></div>
+    <div class="phone-frame delay-1"><img src="screen2.jpg" alt="Screen 2"></div>
+    <div class="phone-frame delay-2"><img src="screen3.jpg" alt="Screen 3"></div>
+</div>
 
 <style>
-    section::-webkit-scrollbar { display: none; }
-    section { -ms-overflow-style: none; scrollbar-width: none; }
+    /* حاوية الصور */
+    .mockup-container {
+        display: flex;
+        justify-content: center;
+        gap: clamp(10px, 3vw, 40px);
+        padding: 20px 5% 80px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* إطار الجوال */
+    .phone-frame {
+        flex: 0 0 auto;
+        width: clamp(200px, 30vw, 280px); /* حجم متجاوب */
+        border: 8px solid #333; /* إطار الجوال الأسود */
+        border-radius: 35px;
+        background: #333;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        animation: float 4s ease-in-out infinite; /* حركة الطفو */
+        transition: 0.4s;
+    }
+
+    .phone-frame img {
+        width: 100%;
+        display: block;
+        border-radius: 25px;
+    }
+
+    /* تأثيرات الحركة */
+    @keyframes float {
+        0% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        50% { transform: translateY(-20px); box-shadow: 0 40px 60px rgba(0,0,0,0.1); }
+        100% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    }
+
+    /* تأخير الحركة لكل جوال ليعطي شكل موجة */
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+
+    /* تفاعل عند تمرير الماوس */
+    .phone-frame:hover {
+        transform: scale(1.05) translateY(-25px) !important;
+        border-color: #b89344; /* يتغير لون الإطار للذهبي عند التأشير */
+        z-index: 10;
+    }
+
+    /* إخفاء شريط التمرير */
+    .mockup-container::-webkit-scrollbar { display: none; }
+    .mockup-container { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
+    
     <footer>
         <p>لديك استفسار أو اقتراح؟ يسعدنا تواصلك معنا</p>
         <a href="mailto:laborlaw.app.sa@gmail.com" class="contact-link">laborlaw.app.sa@gmail.com</a>
