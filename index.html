@@ -112,34 +112,44 @@
 <h2 style="text-align: center; margin: 60px 0 40px; color: #1a4d3a; font-family: 'Cairo', sans-serif; font-weight: 800;">جولة داخل التطبيق</h2>
 
 <div class="mockup-container">
-    <div class="phone-frame"><img src="screen2.jpg" alt="Screen 2"></div>
-    <div class="phone-frame delay-1"><img src="screen1.jpg" alt="Screen 1"></div>
+    <div class="spacer"></div>
+    
+    <div class="phone-frame"><img src="screen1.jpg" alt="Screen 1"></div>
+    <div class="phone-frame delay-1"><img src="screen2.jpg" alt="Screen 2"></div>
     <div class="phone-frame delay-2"><img src="screen3.jpg" alt="Screen 3"></div>
+    
+    <div class="spacer"></div>
 </div>
 
 <style>
-    /* حاوية الصور */
     .mockup-container {
         display: flex;
-        justify-content: center;
-        gap: clamp(10px, 3vw, 40px);
-        padding: 20px 5% 80px;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 20px 0 80px; /* ألغينا البادينج الجانبي هنا لنستخدم السبيسر */
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        /* خاصية التوسيط عند السحب */
+        scroll-snap-type: x mandatory; 
     }
 
-    /* إطار الجوال */
+    .spacer {
+        flex: 0 0 15%; /* تعطي مساحة فراغ جانبية لتتوسط الصورة الأولى */
+    }
+
     .phone-frame {
         flex: 0 0 auto;
-        width: clamp(200px, 30vw, 280px); /* حجم متجاوب */
-        border: 8px solid #333; /* إطار الجوال الأسود */
+        width: 260px; 
+        border: 8px solid #333;
         border-radius: 35px;
         background: #333;
         overflow: hidden;
         box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        animation: float 4s ease-in-out infinite; /* حركة الطفو */
+        animation: float 4s ease-in-out infinite;
         transition: 0.4s;
+        /* تجعل الصورة تقف في منتصف الشاشة بالضبط */
+        scroll-snap-align: center; 
     }
 
     .phone-frame img {
@@ -148,23 +158,13 @@
         border-radius: 25px;
     }
 
-    /* تأثيرات الحركة */
     @keyframes float {
-        0% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        50% { transform: translateY(-20px); box-shadow: 0 40px 60px rgba(0,0,0,0.1); }
-        100% { transform: translateY(0px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
     }
 
-    /* تأخير الحركة لكل جوال ليعطي شكل موجة */
     .delay-1 { animation-delay: 0.5s; }
     .delay-2 { animation-delay: 1s; }
-
-    /* تفاعل عند تمرير الماوس */
-    .phone-frame:hover {
-        transform: scale(1.05) translateY(-25px) !important;
-        border-color: #b89344; /* يتغير لون الإطار للذهبي عند التأشير */
-        z-index: 10;
-    }
 
     /* إخفاء شريط التمرير */
     .mockup-container::-webkit-scrollbar { display: none; }
