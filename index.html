@@ -100,23 +100,28 @@
             </div>
         </div>
     </section>
-<h2 style="text-align: center; margin: 40px 0 20px; color: #1a4d3a; font-size: 1.8rem;">جولة داخل التطبيق</h2>
+<h2 style="text-align: center; margin: 50px 0 20px; color: #1a4d3a; font-family: 'Cairo', sans-serif; font-size: 1.8rem; font-weight: 800;">جولة داخل التطبيق</h2>
 
-<section style="display: flex; gap: 20px; padding: 10px 5% 40px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+<section style="display: flex; gap: 15px; padding: 10px 5% 40px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;">
     
-    <div style="flex: 0 0 auto; width: 280px;">
-        <img src="screen1.png" alt="واجهة التطبيق 1" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #eee;">
+    <div style="flex: 0 0 auto; width: 260px; scroll-snap-align: start;">
+        <img src="screen1.jpg" alt="Screen 1" style="width: 100%; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid #eee;">
     </div>
 
-    <div style="flex: 0 0 auto; width: 280px;">
-        <img src="screen2.png" alt="واجهة التطبيق 2" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #eee;">
+    <div style="flex: 0 0 auto; width: 260px; scroll-snap-align: start;">
+        <img src="screen2.jpg" alt="Screen 2" style="width: 100%; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid #eee;">
     </div>
 
-    <div style="flex: 0 0 auto; width: 280px;">
-        <img src="screen3.png" alt="واجهة التطبيق 3" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #eee;">
+    <div style="flex: 0 0 auto; width: 260px; scroll-snap-align: start;">
+        <img src="screen3.jpg" alt="Screen 3" style="width: 100%; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid #eee;">
     </div>
 
 </section>
+
+<style>
+    section::-webkit-scrollbar { display: none; }
+    section { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
     <footer>
         <p>لديك استفسار أو اقتراح؟ يسعدنا تواصلك معنا</p>
         <a href="mailto:laborlaw.app.sa@gmail.com" class="contact-link">laborlaw.app.sa@gmail.com</a>
