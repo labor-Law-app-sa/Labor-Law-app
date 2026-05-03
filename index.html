@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تطبيق نظام العمل السعودي - المرجع الأول للثقافة العمالية، حاسبات مستحقات نهاية الخدمة، استشارات قانونية، ونصوص نظام العمل واللائحة التنفيذية.">
-<meta name="keywords" content="نظام العمل، السعودية، مكتب العمل، حاسبة نهاية الخدمة، الثقافة العمالية، مستحقات، قانون العمل، محامي عمالي، استشارات قانونية">
-<meta name="author" content="نظام العمل">
+    <meta name="description" content="تطبيق نظام العمل السعودي - المحفظة المهنية الذكية، استخراج بيانات العقود بالذكاء الاصطناعي، وحاسبات المستحقات العمالية المحدثة.">
+    <meta name="keywords" content="نظام العمل، السعودية، المحفظة المهنية، ذكاء اصطناعي، مكتب العمل، حاسبة نهاية الخدمة، الثقافة العمالية، استخراج عقود">
+    <meta name="author" content="نظام العمل">
 
-<meta property="og:title" content="تطبيق نظام العمل - ثقافتك القانونية في جيبك">
-<meta property="og:description" content="احسب مستحقاتك وتصفح مواد نظام العمل واللائحة التنفيذية بكل سهولة.">
-<meta property="og:image" content="logo.png">
-<meta property="og:url" content="https://labor-law-app-sa.github.io/Labor-Law-app/">
-    <title>نظام العمل - المرجع الأول للثقافة العمالية</title>
+    <meta property="og:title" content="تطبيق نظام العمل - محفظتك القانونية الذكية في جيبك">
+    <meta property="og:description" content="استخرج بيانات عقدك بالذكاء الاصطناعي وتابع إجازاتك وحقوقك المهنية بكل سهولة.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://labor-law-app-sa.github.io/Labor-Law-app/">
+    
+    <title>نظام العمل - المحفظة المهنية والذكاء الاصطناعي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a4d3a;
@@ -21,170 +22,173 @@
             --light-gold: #f4e8c1;
             --white: #ffffff;
             --gray: #f8f9fa;
+            --gradient: linear-gradient(135deg, #1a4d3a 0%, #2d6a4f 100%);
         }
-        body { font-family: 'Cairo', sans-serif; margin: 0; background-color: var(--gray); color: #333; line-height: 1.6; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background-color: var(--gray); color: #333; line-height: 1.6; scroll-behavior: smooth; }
         
-        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo-area { display: flex; align-items: center; gap: 10px; }
-        .logo-area img { width: 45px; }
+        header { background: var(--white); padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        .hero { background: var(--gradient); color: white; padding: 60px 5% 100px; text-align: center; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 20px; color: var(--light-gold); font-weight: 800; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 35px; opacity: 0.9; }
 
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, #2d6a4f 100%); color: white; padding: 60px 5% 100px; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--light-gold); }
-        .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 30px; }
-        .feature-img { width: 90%; max-width: 850px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-top: 30px; border: 3px solid var(--gold); }
+        /* قسم المحفظة الجديد */
+        .wallet-highlight {
+            background: white;
+            margin: -60px 5% 40px;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+            border: 2px solid var(--light-gold);
+        }
+        .wallet-content h2 { color: var(--primary); font-size: 2rem; margin-bottom: 15px; }
+        .wallet-feature-list { list-style: none; padding: 0; }
+        .wallet-feature-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-weight: 600; }
+        .wallet-feature-list li i { color: var(--gold); background: var(--light-gold); padding: 10px; border-radius: 12px; }
 
-        .section-title { text-align: center; margin: 50px 0 30px; color: var(--primary); }
+        .feature-img { width: 100%; max-width: 850px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin-top: 30px; border: 4px solid var(--gold); }
+
+        .section-title { text-align: center; margin: 60px 0 30px; color: var(--primary); font-size: 2.2rem; font-weight: 800; }
         
         .features { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: white; padding: 35px; border-radius: 20px; text-align: center; transition: 0.3s; border-bottom: 5px solid var(--gold); }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .card { background: white; padding: 35px; border-radius: 25px; text-align: center; transition: 0.4s; border: 1px solid #eee; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--gold); }
+        .card i { font-size: 2.8rem; color: var(--gold); margin-bottom: 25px; }
+        .card h3 { color: var(--primary); margin-bottom: 15px; }
         
-        .upcoming { background: var(--light-gold); padding: 50px 5%; border-radius: 30px; margin: 40px 5%; text-align: center; }
-        .upcoming h2 { color: var(--primary); margin-bottom: 20px; }
-        .badge { background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; vertical-align: middle; }
+        .ai-badge { position: absolute; top: 15px; left: 15px; background: var(--primary); color: var(--light-gold); padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: bold; }
 
-        .btn { padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; margin: 10px; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-gold { background: var(--gold); color: white; }
-        .btn-outline { border: 2px solid var(--gold); color: var(--gold); background: white; }
-        .btn:hover { opacity: 0.8; transform: scale(1.05); }
+        .btn { padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; margin: 10px; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-gold { background: var(--gold); color: white; box-shadow: 0 4px 15px rgba(184, 147, 68, 0.3); }
+        .btn-gold:hover { background: #9a7b36; transform: scale(1.05); }
 
-        footer { background: var(--primary); color: white; text-align: center; padding: 40px; }
-        .contact-link { color: var(--light-gold); text-decoration: none; font-weight: bold; }
+        footer { background: var(--primary); color: white; text-align: center; padding: 60px 5% 40px; }
+        .contact-link { color: var(--light-gold); text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+
+        /* تنسيق الصور المتحركة */
+        .mockup-container { display: flex; gap: 20px; padding: 40px 0 80px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; }
+        .mockup-container::-webkit-scrollbar { display: none; }
+        .phone-frame { flex: 0 0 auto; width: 260px; border: 10px solid #222; border-radius: 40px; background: #222; scroll-snap-align: center; animation: float 5s ease-in-out infinite; box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+        .phone-frame img { width: 100%; border-radius: 30px; display: block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        @media (max-width: 768px) {
+            .wallet-highlight { padding: 25px; margin: -40px 5% 30px; }
+            .hero { padding-bottom: 80px; }
+        }
     </style>
-<header style="background: #ffffff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-    <div style="display: flex; align-items: center; gap: clamp(8px, 2vw, 15px);">
-        <img src="logo.png" alt="لوجو نظام العمل" style="width: clamp(45px, 12vw, 75px); height: auto; border-radius: 12px;">
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="logo.png" alt="لوجو نظام العمل" style="width: 55px; height: auto; border-radius: 12px;">
         <div style="display: flex; flex-direction: column;">
-            <h1 style="color: #1a4d3a; margin: 0; font-size: clamp(1rem, 4.5vw, 1.6rem); font-weight: 800; line-height: 1.2;">نظام العمل السعودي</h1>
-            <span style="color: #b89344; font-size: clamp(0.6rem, 2vw, 0.85rem); font-weight: bold;">مكتبة الثقافة العمالية</span>
+            <h1 style="color: #1a4d3a; margin: 0; font-size: 1.3rem; font-weight: 800; line-height: 1.2;">نظام العمل السعودي</h1>
+            <span style="color: #b89344; font-size: 0.8rem; font-weight: bold;">المحفظة العمالية الذكية</span>
         </div>
     </div>
-    <a href="mailto:laborlaw.app.sa@gmail.com" style="padding: 8px 15px; border-radius: 50px; text-decoration: none; font-weight: bold; border: 2px solid #b89344; color: #b89344; font-size: clamp(0.75rem, 2vw, 0.95rem);">تواصل معنا</a>
+    <a href="mailto:laborlaw.app.sa@gmail.com" class="btn btn-outline" style="border: 2px solid #b89344; color: #b89344; padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; text-decoration: none; font-weight: bold;">تواصل معنا</a>
 </header>
 
-    <section class="hero">
-        <h1>مستقبلك المهني يبدأ بوعيك القانوني</h1>
-        <p>تطبيق "نظام العمل السعودي" هو رفيقك الرقمي لفهم حقوقك وواجباتك، مع أدوات ذكية تجعل لغة القانون بسيطة وفي متناول الجميع.</p>
-<div class="download-btns">
-    <a href="https://play.google.com/store/apps/details?id=sa.laborlaw.app&pcampaignid=web_share" 
-       class="btn btn-gold" target="_blank">
-       <i class="fab fa-google-play"></i> حمّل من Google Play
-    </a>
-    <a href="https://apps.apple.com/sa/app/نظام-العمل-السعودي/id6762184829?l=ar" 
-       class="btn btn-gold" target="_blank">
-       <i class="fab fa-apple"></i> حمّل من App Store
-    </a>
-</div>
-        <img src="/Labor-Law-app/feature.png" class="feature-img" alt="واجهة تطبيق نظام العمل السعودي">
-    </section>
+<section class="hero">
+    <h1>محفظتك المهنية.. بذكاء اصطناعي</h1>
+    <p>أول تطبيق سعودي يستخدم الذكاء الاصطناعي لإدارة عقودك العمالية، وحساب مستحقاتك، وتنبيهك بمواعيدك القانونية بدقة متناهية.</p>
+    <div class="download-btns">
+        <a href="https://play.google.com/store/apps/details?id=sa.laborlaw.app" class="btn btn-gold" target="_blank">
+            <i class="fab fa-google-play"></i> Google Play
+        </a>
+        <a href="https://apps.apple.com/sa/app/نظام-العمل-السعودي/id6762184829" class="btn btn-gold" target="_blank">
+            <i class="fab fa-apple"></i> App Store
+        </a>
+    </div>
+</section>
 
-    <h2 class="section-title">الميزات الحالية</h2>
-    <section class="features">
+<!-- قسم تركيز المحفظة العمالية -->
+<section class="wallet-highlight">
+    <div class="wallet-content">
+        <h2>المحفظة العمالية الذكية <span class="badge" style="background: var(--gold); color: white; font-size: 0.7rem; padding: 5px 12px; border-radius: 50px;">جديد</span></h2>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 25px;">حوّل عقد عملك من ورقة صامتة إلى محفظة تفاعلية تدير حياتك المهنية:</p>
+        <ul class="wallet-feature-list">
+            <li><i class="fas fa-file-pdf"></i> استخراج بيانات العقد تلقائياً من الـ PDF عبر الذكاء الاصطناعي.</li>
+            <li><i class="fas fa-history"></i> تتبع لحظي لرصيد الإجازات وسجل الغيابات.</li>
+            <li><i class="fas fa-bell"></i> شعارات ذكية: تنبيهات (انتهاء التجربة، انتهاء العقد، تجديد الإجازة).</li>
+            <li><i class="fas fa-file-signature"></i> توليد خطابات جاهزة (استقالة، عدم تجديد، إنهاء بالاتفاق) بضغطة زر.</li>
+        </ul>
+    </div>
+    <div class="wallet-visual">
+        <img src="feature.png" style="width: 100%; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" alt="المحفظة الذكية">
+    </div>
+</section>
+
+<section id="features-section">
+    <h2 class="section-title">مميزات تجعل تجربتك فريدة</h2>
+    <div class="features">
+        <div class="card">
+            <span class="ai-badge">AI الذكاء الاصطناعي</span>
+            <i class="fas fa-robot"></i>
+            <h3>المسح الذكي للعقود</h3>
+            <p>لا تقم بإدخال البيانات يدوياً، ارفع العقد وسيتولى الذكاء الاصطناعي تعبئة الحاسبة والمحفظة بدلاً عنك.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-question-circle"></i>
+            <h3>سؤال اليوم</h3>
+            <p>ثقّف نفسك قانونياً يومياً مع أسئلة تفاعلية من واقع حالات مكتب العمل مع شرح قانوني مفصل.</p>
+        </div>
         <div class="card">
             <i class="fas fa-calculator"></i>
-            <h3>حاسبات عمالية ذكية</h3>
-            <p>احسب مكافأة نهاية الخدمة، مستحقات الإجازات، وبدل العمل الإضافي وفقاً لآخر التحديثات التنظيمية.</p>
+            <h3>حاسبة المستحقات الشاملة</h3>
+            <p>حسابات دقيقة لمكافأة نهاية الخدمة، بدل الإجازات، والتعويضات وفق المادة 77 و80 وغيرها.</p>
         </div>
         <div class="card">
-            <i class="fas fa-book-reader"></i>
-            <h3>النظام واللائحة</h3>
-            <p>وصول كامل ومبسط لنصوص مواد نظام العمل واللائحة التنفيذية مع محرك بحث ذكي.</p>
+            <i class="fas fa-balance-scale"></i>
+            <h3>مكتبة الأنظمة واللوائح</h3>
+            <p>نصوص نظام العمل واللوائح التنفيذية محدثة كلياً ومصنفة لتصل لما تريد في ثوانٍ.</p>
         </div>
-        <div class="card">
-            <i class="fas fa-user-shield"></i>
-            <h3>الثقافة القانونية</h3>
-            <p>محتوى تعليمي لرفع مستوى الوعي بالحقوق والواجبات التعاقدية.</p>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section class="upcoming">
-        <h2><span class="badge">قريباً</span> خدماتنا المستقبلية</h2>
-        <p>نعمل حالياً على تطوير ميزات كبرى لتغيير تجربة التعامل مع الاستشارات القانونية:</p>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-            <div style="max-width: 300px;">
-                <i class="fas fa-handshake fa-2x" style="color: var(--primary)"></i>
-                <h4>ربط المحامين</h4>
-                <p>منصة تجمع طالبي الاستشارات بنخبة من المحامين المختصين في القضايا العمالية.</p>
-            </div>
-            <div style="max-width: 300px;">
-                <i class="fas fa-brain fa-2x" style="color: var(--primary)"></i>
-                <h4>المحاكاة الذكية</h4>
-                <p>تطوير الذكاء الاصطناعي للإجابة الفورية على التساؤلات القانونية المعقدة.</p>
-            </div>
-        </div>
-    </section>
-
-<h2 style="text-align: center; margin: 60px 0 40px; color: #1a4d3a; font-family: 'Cairo', sans-serif; font-weight: 800;">جولة داخل التطبيق</h2>
-
+<h2 class="section-title">جولة سريعة داخل التطبيق</h2>
 <div class="mockup-container">
-    <div class="spacer"></div>
-    
-    <div class="phone-frame"><img src="screen1.jpg" alt="Screen 1"></div>
-    <div class="phone-frame delay-1"><img src="screen2.jpg" alt="Screen 2"></div>
-    <div class="phone-frame delay-2"><img src="screen3.jpg" alt="Screen 3"></div>
-    <div class="phone-frame delay-2"><img src="screen4.jpg" alt="Screen 4"></div>
-    
-    <div class="spacer"></div>
+    <div style="flex: 0 0 10%;"></div>
+    <div class="phone-frame"><img src="screen1.jpg" alt="المحفظة"></div>
+    <div class="phone-frame" style="animation-delay: 0.5s;"><img src="screen2.jpg" alt="الحاسبة"></div>
+    <div class="phone-frame" style="animation-delay: 1s;"><img src="screen3.jpg" alt="النظام"></div>
+    <div class="phone-frame" style="animation-delay: 1.5s;"><img src="screen4.jpg" alt="سؤال اليوم"></div>
+    <div style="flex: 0 0 10%;"></div>
 </div>
 
-<style>
-    .mockup-container {
-        display: flex;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 20px 0 80px; /* ألغينا البادينج الجانبي هنا لنستخدم السبيسر */
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        /* خاصية التوسيط عند السحب */
-        scroll-snap-type: x mandatory; 
-    }
-
-    .spacer {
-        flex: 0 0 15%; /* تعطي مساحة فراغ جانبية لتتوسط الصورة الأولى */
-    }
-
-    .phone-frame {
-        flex: 0 0 auto;
-        width: 260px; 
-        border: 8px solid #333;
-        border-radius: 35px;
-        background: #333;
-        overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        animation: float 4s ease-in-out infinite;
-        transition: 0.4s;
-        /* تجعل الصورة تقف في منتصف الشاشة بالضبط */
-        scroll-snap-align: center; 
-    }
-
-    .phone-frame img {
-        width: 100%;
-        display: block;
-        border-radius: 25px;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-    }
-
-    .delay-1 { animation-delay: 0.5s; }
-    .delay-2 { animation-delay: 1s; }
-
-    /* إخفاء شريط التمرير */
-    .mockup-container::-webkit-scrollbar { display: none; }
-    .mockup-container { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
-    
-    <footer>
-        <p>لديك استفسار أو اقتراح؟ يسعدنا تواصلك معنا</p>
-        <a href="mailto:laborlaw.app.sa@gmail.com" class="contact-link">laborlaw.app.sa@gmail.com</a>
-        <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
-            حقوق النشر © 2026 تطبيق نظام العمل السعودي. جميع الحقوق محفوظة.
+<section class="upcoming" style="background: var(--primary); color: white; padding: 60px 5%; margin: 0; border-radius: 0; text-align: center;">
+    <h2 style="color: var(--light-gold);">رؤيتنا للمستقبل</h2>
+    <p style="max-width: 700px; margin: 0 auto 30px;">نحن لا نوفر تطبيقاً فحسب، بل نبني منظومة متكاملة لحماية حقوقك المهنية.</p>
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+        <div style="max-width: 250px;">
+            <i class="fas fa-user-tie fa-3x" style="color: var(--gold); margin-bottom: 15px;"></i>
+            <h4>منصة المحامين</h4>
+            <p style="font-size: 0.9rem; opacity: 0.8;">ربط مباشر مع نخبة من المحامين المختصين في القضايا العمالية.</p>
         </div>
-    </footer>
+        <div style="max-width: 250px;">
+            <i class="fas fa-shield-alt fa-3x" style="color: var(--gold); margin-bottom: 15px;"></i>
+            <h4>مستشار الـ AI القانوني</h4>
+            <p style="font-size: 0.9rem; opacity: 0.8;">دردشة ذكية فورية لتحليل موقفك القانوني بناءً على نصوص النظام.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <img src="logo.png" style="width: 70px; margin-bottom: 20px; border-radius: 15px;" alt="Logo">
+    <p style="font-size: 1.2rem; margin-bottom: 10px;">لديك استفسار أو اقتراح؟ يسعدنا تواصلك معنا</p>
+    <a href="mailto:laborlaw.app.sa@gmail.com" class="contact-link">laborlaw.app.sa@gmail.com</a>
+    <div style="margin-top: 40px; font-size: 0.9rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        حقوق النشر © 2026 تطبيق نظام العمل السعودي. جميع الحقوق محفوظة.
+        <br>
+        <small>هذا التطبيق مجهود شخصي وتوعوي ولا يمثل أي جهة حكومية رسمية.</small>
+    </div>
+</footer>
 
 </body>
 </html>
