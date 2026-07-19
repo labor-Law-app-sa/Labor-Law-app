@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سياسة الخصوصية — القدرة المعرفية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0E27;
+    --surface: #141836;
+    --primary: #6366F1;
+    --accent: #F59E0B;
+    --success: #10B981;
+    --text: #F8FAFC;
+    --text-dim: #94A3B8;
+    --border: #1E2A4A;
+  }
+  [data-theme="light"] {
+    --bg: #F7F8FC;
+    --surface: #FFFFFF;
+    --text: #10152B;
+    --text-dim: #5B6478;
+    --border: #E5E8F5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background .3s ease, color .3s ease;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header.top {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+    transition: background .3s ease;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16px; }
+  .brand .mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .toggle {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-dim);
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .hero { padding: 56px 0 40px; text-align: center; }
+  .hero .eyebrow {
+    color: var(--accent); font-weight: 700; font-size: 13px;
+    letter-spacing: .04em; margin-bottom: 14px;
+  }
+  .hero h1 { font-size: 30px; font-weight: 800; margin: 0 0 14px; }
+  .hero p { color: var(--text-dim); font-size: 15px; max-width: 520px; margin: 0 auto; }
+  .hero .updated {
+    display: inline-block; margin-top: 20px; font-size: 12px;
+    color: var(--text-dim); background: var(--surface);
+    padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+  }
+
+  .core-banner {
+    background: linear-gradient(135deg, rgba(99,102,241,.13), rgba(245,158,11,.10));
+    border: 1px solid rgba(99,102,241,.3);
+    border-radius: 18px;
+    padding: 22px 24px;
+    margin-bottom: 44px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .core-banner .icon { font-size: 24px; }
+  .core-banner strong { display: block; margin-bottom: 4px; font-size: 15px; }
+  .core-banner span { color: var(--text-dim); font-size: 13.5px; }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 48px;
+  }
+  nav.toc div.label { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; font-weight: 700; }
+  nav.toc ol { margin: 0; padding-inline-start: 20px; font-size: 13.5px; }
+  nav.toc li { margin-bottom: 6px; }
+  nav.toc a { color: var(--text); text-decoration: none; opacity: .85; }
+  nav.toc a:hover { color: var(--primary); opacity: 1; }
+
+  section.item { margin-bottom: 40px; scroll-margin-top: 90px; }
+  section.item .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 8px;
+    background: rgba(99,102,241,.15); color: var(--primary);
+    font-size: 12px; font-weight: 800; margin-inline-end: 10px;
+  }
+  section.item h2 {
+    font-size: 18px; font-weight: 800; margin: 0 0 14px;
+    display: flex; align-items: center;
+  }
+  section.item p, section.item li { color: var(--text-dim); font-size: 14.5px; }
+  section.item ul { padding-inline-start: 20px; margin: 10px 0; }
+  section.item li { margin-bottom: 8px; }
+  section.item strong { color: var(--text); }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .pill {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 14px; font-size: 13px;
+    color: var(--text); display: flex; align-items: center; gap: 8px;
+  }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 56px;
+  }
+  .contact-card h3 { margin: 0 0 8px; font-size: 16px; }
+  .contact-card p { color: var(--text-dim); font-size: 13.5px; margin: 0 0 16px; }
+  .contact-card a.mail {
+    display: inline-block; background: var(--primary); color: #fff;
+    text-decoration: none; padding: 12px 26px; border-radius: 12px;
+    font-weight: 700; font-size: 14px;
+  }
+
+  footer.foot {
+    text-align: center; padding: 30px 24px 10px;
+    color: var(--text-dim); font-size: 12px;
+  }
+</style>
+</head>
+<body data-theme="dark">
+
+<header class="top">
+  <div class="brand">
+    <div class="mark">🧠</div>
+    القدرة المعرفية
+  </div>
+  <button class="toggle" onclick="toggleTheme()">
+    <span id="toggleIcon">☀️</span>
+    <span id="toggleLabel">الوضع الفاتح</span>
+  </button>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">سياسة الخصوصية</div>
+    <h1>خصوصيتك أولوية، مو تفصيل</h1>
+    <p>هذي الصفحة توضح بشفافية كاملة وش يجمعه تطبيق "القدرة المعرفية" ووش ما يجمعه، وكيف نتعامل مع أي معلومة تخصك.</p>
+    <div class="updated">آخر تحديث: يوليو 2026</div>
+  </div>
+
+  <div class="core-banner">
+    <div class="icon">🔒</div>
+    <div>
+      <strong>الخلاصة بجملة وحدة</strong>
+      <span>التطبيق ما يطلب منك تسجيل دخول، وما يجمع اسمك أو بريدك أو رقمك. كل تقدمك وإجاباتك تُخزّن على جهازك فقط.</span>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <div class="label">محتويات الصفحة</div>
+    <ol>
+      <li><a href="#collect">وش نجمع من معلومات</a></li>
+      <li><a href="#local">التخزين المحلي على جهازك</a></li>
+      <li><a href="#firestore">محتوى الأسئلة (Firebase)</a></li>
+      <li><a href="#purchases">الاشتراكات والمدفوعات</a></li>
+      <li><a href="#thirdparty">أطراف ثالثة نتعامل معها</a></li>
+      <li><a href="#children">خصوصية الأطفال</a></li>
+      <li><a href="#security">أمان بياناتك</a></li>
+      <li><a href="#rights">حقوقك</a></li>
+      <li><a href="#changes">تحديثات هذي السياسة</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ol>
+  </nav>
+
+  <section class="item" id="collect">
+    <h2><span class="num">1</span>وش نجمع من معلومات</h2>
+    <p>تطبيق "القدرة المعرفية" مصمم من الأساس بدون نظام تسجيل دخول أو حسابات مستخدمين. هذا يعني إننا:</p>
+    <div class="pill-row">
+      <div class="pill"><span class="dot"></span> ما نطلب اسمك</div>
+      <div class="pill"><span class="dot"></span> ما نطلب بريدك الإلكتروني</div>
+      <div class="pill"><span class="dot"></span> ما نطلب رقم جوالك</div>
+      <div class="pill"><span class="dot"></span> ما نربط بياناتك بهويتك</div>
+    </div>
+    <p>ما فيه أي معلومة تعريف شخصية (Personally Identifiable Information) يجمعها التطبيق نفسه بأي مرحلة من استخدامك له.</p>
+  </section>
+
+  <section class="item" id="local">
+    <h2><span class="num">2</span>التخزين المحلي على جهازك</h2>
+    <p>كل تقدمك بالتطبيق — الأسئلة اللي جاوبت عليها، أخطاؤك، الأسئلة المحفوظة، سجل محاولاتك، وإعداداتك (زي الوضع الفاتح/الداكن) — يُخزّن <strong>محلياً على جهازك فقط</strong> باستخدام تقنية تخزين محلية (Hive)، ولا تُرسل هذي البيانات لأي خادم خارجي.</p>
+    <p>لو حذفت التطبيق من جهازك، تُحذف هذي البيانات معه بشكل نهائي، لأننا ما نحتفظ بنسخة منها بأي مكان ثاني.</p>
+  </section>
+
+  <section class="item" id="firestore">
+    <h2><span class="num">3</span>محتوى الأسئلة (Firebase)</h2>
+    <p>يستخدم التطبيق خدمة <strong>Firebase Firestore</strong> من Google لجلب محتوى الأسئلة والشروحات فقط — يعني قراءة محتوى تعليمي عام، بدون إرسال أي معلومة تخصك أو تعرّف جهازك بشكل شخصي مع هذي الطلبات.</p>
+  </section>
+
+  <section class="item" id="purchases">
+    <h2><span class="num">4</span>الاشتراكات والمدفوعات</h2>
+    <p>لو اخترت الاشتراك بالنسخة المدفوعة، عملية الدفع نفسها تتم بالكامل عبر <strong>Apple App Store</strong> أو <strong>Google Play</strong> — التطبيق لا يرى ولا يخزّن بيانات بطاقتك البنكية أو معلومات الدفع بأي شكل. نستخدم خدمة RevenueCat فقط للتحقق من صحة الاشتراك، وهذا التحقق لا يشمل أي بيانات مالية أو شخصية عنك.</p>
+  </section>
+
+  <section class="item" id="thirdparty">
+    <h2><span class="num">5</span>أطراف ثالثة نتعامل معها</h2>
+    <ul>
+      <li><strong>Firebase (Google):</strong> لتخزين وجلب محتوى الأسئلة.</li>
+      <li><strong>RevenueCat:</strong> للتحقق من حالة الاشتراك.</li>
+      <li><strong>Apple App Store / Google Play:</strong> لمعالجة عمليات الدفع بشكل مستقل تماماً عن التطبيق.</li>
+    </ul>
+    <p>التطبيق <strong>لا يعرض إعلانات</strong> ولا يستخدم أي خدمة تتبّع إعلاني أو تحليلات سلوكية تجمع بيانات شخصية.</p>
+  </section>
+
+  <section class="item" id="children">
+    <h2><span class="num">6</span>خصوصية الأطفال</h2>
+    <p>التطبيق موجّه لمن يستعدّون لاختبار القدرة المعرفية، وما يجمع أي بيانات شخصية من أي مستخدم بغض النظر عن عمره، لأنه أصلاً لا يوجد نظام تسجيل أو جمع بيانات بالتطبيق.</p>
+  </section>
+
+  <section class="item" id="security">
+    <h2><span class="num">7</span>أمان بياناتك</h2>
+    <p>بما إن بياناتك (تقدمك، إجاباتك، إعداداتك) تبقى محلياً على جهازك ولا تُرسل لأي خادم، فإن مستوى حماية هذي البيانات مرتبط مباشرة بإعدادات الأمان الخاصة بجهازك أنت (قفل الشاشة، تحديثات النظام، إلخ).</p>
+  </section>
+
+  <section class="item" id="rights">
+    <h2><span class="num">8</span>حقوقك</h2>
+    <p>بما إننا لا نحتفظ بأي بيانات شخصية عنك على خوادمنا، فإن التحكم الكامل ببياناتك المحلية (عرضها، تعديلها، حذفها) متاح لك مباشرة من داخل التطبيق نفسه (أزرار إعادة التعيين المتوفرة بكل قسم)، أو بحذف التطبيق بالكامل من جهازك.</p>
+  </section>
+
+  <section class="item" id="changes">
+    <h2><span class="num">9</span>تحديثات هذي السياسة</h2>
+    <p>ممكن نحدّث هذي السياسة من وقت لآخر لمواكبة أي تغيير بميزات التطبيق. أي تحديث جوهري راح ينعكس هنا مع تاريخ التحديث بأعلى الصفحة.</p>
+  </section>
+
+  <div class="contact-card" id="contact">
+    <h3>عندك سؤال أو استفسار؟</h3>
+    <p>تواصل معنا مباشرة وبنرد عليك في أقرب وقت</p>
+    <a class="mail" href="mailto:laborlaw.app.sa@gmail.com">laborlaw.app.sa@gmail.com</a>
+  </div>
+
+</div>
+
+<footer class="foot">© 2026 القدرة المعرفية — جميع الحقوق محفوظة</footer>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const isDark = body.getAttribute('data-theme') === 'dark';
+    body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('toggleIcon').textContent = isDark ? '🌙' : '☀️';
+    document.getElementById('toggleLabel').textContent = isDark ? 'الوضع الداكن' : 'الوضع الفاتح';
+    localStorage.setItem('privacyTheme', isDark ? 'light' : 'dark');
+  }
+  const saved = localStorage.getItem('privacyTheme');
+  if (saved) {
+    document.body.setAttribute('data-theme', saved);
+    document.getElementById('toggleIcon').textContent = saved === 'dark' ? '☀️' : '🌙';
+    document.getElementById('toggleLabel').textContent = saved === 'dark' ? 'الوضع الفاتح' : 'الوضع الداكن';
+  }
+</script>
+
+</body>
+</html>
